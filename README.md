@@ -5,3 +5,4 @@
 //SETUP process
 
 //1.  Create Github repository
+//2. performed npm init
