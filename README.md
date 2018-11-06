@@ -6,15 +6,18 @@
 
 //1.  Create Github repository
 
-//2. performed npm init
+//2. performed npm init in server subfolder
 
-//3.installed: 
+//3.npm installed: 
 //A. express 
 //B. nodemon 
-//C.morgan 
+//C. morgan 
 //D. winston 
 //E. grunt 
 //F. grunt-cli 
 //G. grunt-contrib-nodemon 
 //H. express-async-handler" 
 //I. body-parser
+//j. grunt-cli -g
+//k. grunt-env
+
