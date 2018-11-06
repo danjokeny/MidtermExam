@@ -47,12 +47,12 @@ module.exports = function (app, config) {
     }));
     
     
-    //Get specific todo  id Request 
-    //Sample: http://localhost:3300/api/todos/5bd7af2e0ba51068bc63f58f
+    //Get specific foos  id Request 
+    //Sample: http://localhost:3300/api/foos/5be0fdd3727e3c73d0fb244f
     router.get('/foos/:id', asyncHandler(async (req, res) => {
-        logger.log('info', 'Get specific todo by id =  %s', req.params.id);
+        logger.log('info', 'Get specific foo by id =  %s', req.params.id);
         await FooBar.findById(req.params.id).then(result => {
-                logger.log('info', 'getbyID Todo = ' + result);
+                logger.log('info', 'getbyID foo = ' + result);
                 res.status(200).json(result);
         })
     }));
