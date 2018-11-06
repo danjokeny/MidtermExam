@@ -34,8 +34,8 @@ module.exports = function (app, config) {
 
 
     
-    //Get All Todo Async Request
-    //Sample: http://localhost:3300/api/todo/todos
+    //Get All Foos Async Request
+    //Sample: http://localhost:3300/api/foos
     router.get('/foos', asyncHandler(async (req, res) => {
         logger.log('info', 'Get (ALL) Foos Async Request');
         let query = FooBar.find();
