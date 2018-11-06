@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/danjokeny/MidtermExam/issues"
   },
-  "homepage": "https://github.com/danjokeny/MidtermExam#readme"
+  "homepage": "https://github.com/danjokeny/MidtermExam#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
