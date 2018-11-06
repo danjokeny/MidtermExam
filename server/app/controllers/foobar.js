@@ -74,16 +74,17 @@ module.exports = function (app, config) {
     //Sample:http://localhost:3300/api/foos/
     /*
 {
-    "_id": "5bd7af2e0ba51068bc63f58f",
-    "Todo": "rock the exam",
-    "Priority": "High",
+    "_id": "5be0fdd3727e3c73d0fb244f",
+    "Foo": "Help get dawnForero   correct",
+    "Woo": 999
 }
     */
-    router.put('/foos', asyncHandler(async (req, res) => {
-        logger.log('info', 'Updating todo');
+
+    router.put('/foos/:id', asyncHandler(async (req, res) => {
+        logger.log('info', 'Updating foos');
         await FooBar.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true })
             .then(result => {
-                logger.log('info', 'update Todo = ' + result);
+                logger.log('info', 'update foos = ' + result);
                 res.status(200).json(result);
             })
     }));
