@@ -15,9 +15,9 @@ module.exports = function (app, config) {
     
     //Get All Todo Async Request
     //Sample: http://localhost:3300/api/todo/todos
-    router.get('/todos', asyncHandler(async (req, res) => {
-        logger.log('info', 'Get (ALL) Todos Async Request');
-        let query = Todo.find();
+    router.get('/foos', asyncHandler(async (req, res) => {
+        logger.log('info', 'Get (ALL) Foos Async Request');
+        let query = FooBar.find();
         query.sort(req.query.order)
         await query.exec().then(result => {
                 logger.log('info', 'JSON = ' + result);
@@ -33,9 +33,9 @@ module.exports = function (app, config) {
         "Priority" : "Critical"
     }
     */
-    router.post('/todos', asyncHandler(async (req, res) => {
+    router.post('/fooos', asyncHandler(async (req, res) => {
         logger.log('info', 'Creating (POST) Todo Async Post');
-        var user = new Todo(req.body);
+        var user = new FooBar(req.body);
         logger.log('info',req.body);
         await user.save()
                 .then(result => {
@@ -46,9 +46,9 @@ module.exports = function (app, config) {
 
     //Get specific todo  id Request 
     //Sample: http://localhost:3300/api/todos/5bd7af2e0ba51068bc63f58f
-    router.get('/todos/:id', asyncHandler(async (req, res) => {
+    router.get('/foos/:id', asyncHandler(async (req, res) => {
         logger.log('info', 'Get specific todo by id =  %s', req.params.id);
-        await Todo.findById(req.params.id).then(result => {
+        await FooBar.findById(req.params.id).then(result => {
                 logger.log('info', 'getbyID Todo = ' + result);
                 res.status(200).json(result);
         })
@@ -63,9 +63,9 @@ module.exports = function (app, config) {
     "Priority": "High",
 }
     */
-    router.put('/todos', asyncHandler(async (req, res) => {
+    router.put('/foos', asyncHandler(async (req, res) => {
         logger.log('info', 'Updating todo');
-        await Todo.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true })
+        await FooBar.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true })
             .then(result => {
                 logger.log('info', 'update Todo = ' + result);
                 res.status(200).json(result);
@@ -74,9 +74,9 @@ module.exports = function (app, config) {
 
     //Delete existing Todo
     //Sample:http://localhost:3300/api/Todo/5bd7ae5d76938a5cf02f2272
-    router.delete('/todos/:id', asyncHandler(async (req, res) => {
+    router.delete('/foos/:id', asyncHandler(async (req, res) => {
         logger.log('info', 'Deleting todo id =  %s', req.params.id);
-        await Todo.remove({ _id: req.params.id })
+        await FooBar.remove({ _id: req.params.id })
                 .then(result => {
                         logger.log('info', 'Delete Todo = ' + req.params.id);
                         res.status(200).json(result);

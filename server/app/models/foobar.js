@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var FooBarSchema = new Schema({
   Foo: { type: String, require:true },
-  Woo: {type:StriNumber },
+  Woo: {type: Number, require:false },
   DateDue: { type: Date, default: Date.now }
 });
 
