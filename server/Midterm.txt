@@ -1,0 +1,18 @@
+//BusAdm 810 -  Web App Dev
+//Daniel Forero
+//midterm  Exam
+
+
+/*
+Professor, 
+here is the midterm exam, but i would prefer you grade last weeks practice exam
+i could not get removing glob to work, and i ran out of time on getting environment 
+variables to work (prod and dev)
+i would prefer to have last week count where i feel i got everything working and 
+i requested last week to count
+but here is the actual midterm mostly working with minor things not working
+*/
+
+
+//GitHub Repository
+https://github.com/danjokeny/MidtermExam

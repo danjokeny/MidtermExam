@@ -27,7 +27,9 @@
 //4. post working
 //5. get all working
 //6. get specific working
-//7. delete - testing
+//7. delete - working
+//8. update - working
+
 
 
 
