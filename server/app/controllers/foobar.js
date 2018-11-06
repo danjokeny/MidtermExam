@@ -5,7 +5,7 @@ var express = require('express'),
     logger = require('../../config/logger'),
     mongoose = require('mongoose'),
     asyncHandler = require('express-async-handler'),
-    Todo = mongoose.model('Todo');
+    FooBar = mongoose.model('FooBar');
 
 
 module.exports = function (app, config) {
