@@ -12,6 +12,27 @@ module.exports = function (app, config) {
     app.use('/api', router);
 
     //API call routes below
+
+    //create new Foo api Post request with json passed in raw body
+    //Sample: http://localhost:3300/api/foos
+    /*Raw Data Json format
+    {
+        "Foo" : "Help get Exam correct",    
+        "Woo" : 5
+    }
+    */
+   router.post('/foos', asyncHandler(async (req, res) => {
+    logger.log('info', 'Creating (POST) FooBar Async Post');
+    var user = new FooBar(req.body);
+    logger.log('info',req.body);
+    await user.save()
+            .then(result => {
+                    logger.log('info', 'Created FooBar = ' + result);
+                    res.status(201).json(result);
+    })
+}));
+
+
     
     //Get All Todo Async Request
     //Sample: http://localhost:3300/api/todo/todos
@@ -25,25 +46,7 @@ module.exports = function (app, config) {
         })
     }));
     
-    //create new todo api Post request with json passed in raw body
-    //Sample: http://localhost:3300/api/Todo/todos
-    /*Raw Data Json format
-    {
-        "Todo" : "Help get Exam correct",    
-        "Priority" : "Critical"
-    }
-    */
-    router.post('/fooos', asyncHandler(async (req, res) => {
-        logger.log('info', 'Creating (POST) Todo Async Post');
-        var user = new FooBar(req.body);
-        logger.log('info',req.body);
-        await user.save()
-                .then(result => {
-                        logger.log('info', 'Created Todo = ' + result);
-                        res.status(201).json(result);
-        })
-    }));
-
+    
     //Get specific todo  id Request 
     //Sample: http://localhost:3300/api/todos/5bd7af2e0ba51068bc63f58f
     router.get('/foos/:id', asyncHandler(async (req, res) => {
